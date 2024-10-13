@@ -58,3 +58,27 @@ if uploaded_file is not None:
     
     # Show the uploaded image
     st.image(img, use_column_width=True)
+
+# Add a footer watermark centered at the bottom
+st.markdown(
+    """
+    <style>
+    .footer {
+        position: fixed;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        background-color: #f1f1f1;
+        color: #555;
+    }
+    </style>
+    <div class="footer">
+        <p>Made with ❤️ by Alexander</p>
+        <p>See more at <a href="https://github.com/alekiie" target="_blank">https://github.com/alekiie</a></p>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
