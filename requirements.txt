@@ -6,4 +6,3 @@ streamlit
 scikit-learn
 joblib
 plotly
-PIL
