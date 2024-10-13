@@ -1,0 +1,18 @@
+# Ignore Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore specific image file formats
+*.jpeg
+*.jpg
+*.png
+*.gif
+*.svg
+*.ico
+*.webp
+*.avif
+
+# Ignore specific files and directories
+kaggle.json
+cats-vs-dogs/
+
+# Ignore model files
