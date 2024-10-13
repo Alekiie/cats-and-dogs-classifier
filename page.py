@@ -5,6 +5,8 @@ from tensorflow.keras.preprocessing import image
 import numpy as np
 from PIL import Image
 from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
+# import cv2
+import cv2
 
 # Set the image dimensions
 IMAGE_DIM = (256, 256)
@@ -27,7 +29,7 @@ model.compile(optimizer='adam', loss=tf.keras.losses.BinaryCrossentropy(), metri
 # Function to preprocess and predict the class of the image
 def predict_image(img):
     # Convert the PIL image to an array and resize it
-    img = img.resize(IMAGE_DIM)
+    img = cv2.resize(IMAGE_DIM)
     img_array = image.img_to_array(img)
     
     # Expand dimensions to add batch size
@@ -39,11 +41,10 @@ def predict_image(img):
     # Make prediction
     prediction = model.predict(img_array)
     
-    # Return the class prediction
-    if prediction[0] > 0.5:
-        return "Dog"
+    if yhat > 0.5: 
+        print(f'Predicted class is a Sad Baby')
     else:
-        return "Cat"
+        print(f'Predicted class is a Happy Baby')
 
 # If an image is uploaded
 if uploaded_file is not None:
